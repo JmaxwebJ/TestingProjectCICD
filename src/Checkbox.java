@@ -39,6 +39,7 @@ public class Checkbox {
 		
 		System.out.println(checkboxCount.size());
 		
+		System.out.println("Second commit check on git");
 		
 	}
 
