@@ -1,0 +1,61 @@
+Prequisites : Cucumber and TestNG should already be installed "Eclipse Marketplace" in order to start with BDD. add sonar
+
+Resources > Features folder
+Java > steps, page.objects(OR), selenium.methods
+
+Framework from scratch using Page object model, object reposiritory, runner files.
+
+Steps 1  : Create Maven project
+
+Steps 2  : Project Configure > Convert into Cucumber project
+
+Step 3  : Create "Feature" folder inside "src/test/resources"  >  Then create "Page_Name.feature" file inside "Feature" folder  > Add "Scenerio:" inside the file.
+
+Step 4  : Pom.xml > Add Cucucmber Java dependecy   >  Ctrl+S  
+(Cucumber, SeleniumJava, Cucumber-testng, webdrivermanager, extentreports-cucumber7-adaptor, log4j-api, log4j-core
+
+Step 5  : Now run .feature file and copy "Snippets" from the console
+
+Step 6(Steps file)  : src/text/java > Create new package "steps" (or any name) > Inside "steps" package create class "Page_nameSteps"
+
+Step 7  : Previously copied snippets will be pasted inside the new java class "Page_nameSteps"
+
+Step 8  : Pom.xml > Add Cucucmber TestNG dependecy    >   Ctrl+S
+
+Step 9  : src/text/java > Create new package "runner" > Inside "runner" package create class "RunCuke" or "RunProject" or any name.
+
+Step 10 : "Runner class" > On google search "Cucumber runner class" and try to find result result realated to "@CucumberOptions" AND "extends AbstractTestNGCucumberTests.
+
+Step 11 : Pom.xml > Copy Paste all the required dependencies
+
+Step 12(Optional) : Create new folder "TestData" inside the main project level, So, we put img, video, excel file for the testing of that data.
+
+Step 13(Start configuring logs) : Create new folder "ApplicationLogs" inside the main project level
+
+Step 14 : src/test/resources > Create file "log4j2.xml"
+
+Step 15 : Google "Configuring log4j2 xml file" and copy paste the file inside the "log4j2.xml" file and check the previously created folder "ApplicationLogs" name is configured.
+
+Step 16 : Check 2 dependencies related to "log4j-api" and "log4j-core" exist inside "POM.xml" 
+
+Add inside (Page_NameMethod) class > final static Logger logger = LogManager.getLogger(Page_NameMethod.class)
+ 
+Step 17(End configuring logs) : Using Logger.info("ABCD.......123",e) in catch block(after putting code inside try block inside method class.
+
+Step 18(Optional) : Add sonar(to check the code)
+
+Step 19(Start configuring Extent report): google "Sparkconfig.xml" and copy from github.
+
+Step 20: src/test/resources > Create new file "Sparkconfig.xml" and paste the previously copied code.
+
+Step 21: Inside runner class inside "@Cucumberoptions" verify line related to "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+
+Step 22: Inside "src/test/resources" create file "extent.properties" and search on google the same.
+
+Step 23: Paste inside file "extent.properties" something like "extent.reporter.spark.start=true" and file name ""Sparkconfig.xml" should present.
+
+Step 24(End configuring) : Pom.xml > Paste dependency related to "extent reports".
+
+Step 25(All Object Repository files): src/test/java > Create Java package "page.objects" > Inside create class "Page_NameOR.java"
+
+Steps 26(All Methods files): src/test/java > Create package "selenium.methods" > Inside create class "Page_NameMethods.java"
